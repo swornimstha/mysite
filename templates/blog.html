@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block title %}Blog | {{ config.title }}{% endblock %}
+
+{# section.pages gives you all posts inside content/blog/
+   sorted by date newest first by default.
+   each page.title, page.date, page.description, page.permalink
+   come from the front matter at the top of each post file. #}
+{% block content %}
+    <h1>Blog</h1>
+
+    {% for page in section.pages %}
+        <h2><a href="{{ page.permalink }}">{{ page.title }}</a></h2>
+
+        {# description is optional in front matter but nice for listings.
+           add "description = your summary here" to a post's front matter
+           and it will show up here. #}
+        {% if page.description %}
+            <p>{{ page.description }}</p>
+        {% endif %}
+
+        <small>{{ page.date | date(format="%B %d, %Y") }}</small>
+        <hr>
+    {% endfor %}
+{% endblock %}

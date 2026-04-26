@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{# page.title comes from "title = ..." in the post's front matter #}
+{% block title %}{{ page.title }} | {{ config.title }}{% endblock %}
+
+{% block content %}
+    <h1>{{ page.title }}</h1>
+
+    {# page.date comes from "date = YYYY-MM-DD" in the post's front matter #}
+    <small>{{ page.date | date(format="%B %d, %Y") }}</small>
+
+    {# page.content is your post body rendered from markdown.
+       if you're writing in org-mode and converting with pandoc,
+       this is where your converted content ends up as HTML.
+       the "safe" filter is required — without it Zola escapes the HTML
+       and your post shows raw tags instead of formatted content. #}
+    {{ page.content | safe }}
+
+    <p><a href="/blog">← back to blog</a></p>
+{% endblock %}

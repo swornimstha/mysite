@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block title %}{{ config.title }}{% endblock %}
+
+{# left sidebar: this shows on the homepage only.
+   "block sidebar_left" overrides the empty default in base.html.
+   put things like an about blurb, links, a site button here. #}
+{% block sidebar_left %}
+    <h2>About</h2>
+    <div class="box">
+        <p>hi! i'm [your name]. this is my little corner of the web.</p>
+    </div>
+
+    <h2>Links</h2>
+    <ul>
+        <li><a href="#">neocities profile</a></li>
+        <li><a href="#">my github</a></li>
+    </ul>
+{% endblock %}
+
+{% block content %}
+    <h1>Welcome!</h1>
+    <p>your intro text here</p>
+
+    {# recent posts: get_section loads your content/blog/ folder.
+       pages are sorted newest first by default.
+       slice(end=5) limits to 5 posts — remove it to show all. #}
+    <h2>Recent Posts</h2>
+    {% set blog = get_section(path="blog/_index.md") %}
+    {% for page in blog.pages | slice(end=5) %}
+        <p>
+            <small>{{ page.date | date(format="%Y-%m-%d") }}</small><br>
+            <a href="{{ page.permalink }}">{{ page.title }}</a>
+        </p>
+    {% endfor %}
+{% endblock %}

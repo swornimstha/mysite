@@ -1,0 +1,15 @@
+base_url = "https://swornim.xyz"
+title = "Swornim's Site"
+build_search_index = false
+
+[markdown]
+github_alerts = true
+
+[markdown.highlighting]
+style = "inline"
+theme = "monokai"
+
+[extra]
+main_menu = [
+    { name = "blog", url = "blog", trailing_slash = true },
+]
