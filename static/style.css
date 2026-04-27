@@ -1,6 +1,4 @@
-
-
-    /* user styles */
+/* user styles */
 
     /* styles are what change the color and sizes of stuff on your site. */
 
@@ -15,7 +13,14 @@
       /* colors */
       --content: #43256E;
     }
+      /* this is to change cursor*/
+    html, body, * {
+      cursor: url('/cursor.png'), auto;
+    }
 
+    a, button, [role="button"], label, select, summary, [onclick] {
+      cursor: url('/cursor2.png'), pointer;
+    }
     /* if you have the URL of a font, you can set it below */
     /* feel free to delete this if it's not your vibe */
 
@@ -54,11 +59,14 @@
     body {
       font-family: 'Nunito', sans-serif;
       margin: 0;
+      min-height: 100vh;
       background-color: #08031A;
       /* you can delete the line below if you'd prefer to not use an image */
       background-size: 65px;
       color: #fceaff;
       background-image: var(--body-bg-image);
+
+
     }
 
     * {
@@ -262,4 +270,3 @@
         flex-wrap: wrap;
       }
     }
-
