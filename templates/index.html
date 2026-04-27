@@ -6,26 +6,33 @@
    "block sidebar_left" overrides the empty default in base.html.
    put things like an about blurb, links, a site button here. #}
 {% block sidebar_left %}
-    <h2>About</h2>
+    <h2>Updates</h2>
     <div class="box">
-        <p>hi! i'm [your name]. this is my little corner of the web.</p>
+          <p>I have finished creating this website on April 2026.</p>
+          <ul style="padding-left:10px;">
+            <li>Initialized zola and converted sadgrl's template into zola's template</li>
+            <li>Added a blog section</li>
+          </ul>
     </div>
 
     <h2>Links</h2>
     <ul>
-        <li><a href="#">neocities profile</a></li>
-        <li><a href="#">my github</a></li>
+        <li><a href="https://github.com/swornimstha">my github</a></li>
     </ul>
 {% endblock %}
 
 {% block content %}
     <h1>Welcome!</h1>
-    <p>your intro text here</p>
+    <p>I name is <strong>Swornim.</strong> I had been putting off creating this site for a while. But finally, I have taken a plunge into this self hosting my own site and it is up and running right now. </p>
+    <p>My interests are linux, chess, and anime/manga. </p>
 
     {# recent posts: get_section loads your content/blog/ folder.
        pages are sorted newest first by default.
        slice(end=5) limits to 5 posts — remove it to show all. #}
-    <h2>Recent Posts</h2>
+{% endblock %}
+
+{% block sidebar_right %}
+        <h2>Recent Posts</h2>
     {% set blog = get_section(path="blog/_index.md") %}
     {% for page in blog.pages | slice(end=5) %}
         <p>

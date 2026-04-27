@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" sizes="48x48" type="image/png" href="/logo.png" />
 
     <!-- "block title" lets child templates override the page title.
          config.title comes from the "title" field in your config.toml.
@@ -20,7 +21,7 @@
 <div id="container">
 
     <!-- topBar: put a marquee, a small image, or just some text here -->
-    <div id="topBar">You can put some text or images (or even a good old-fashioned marquee) up here!</div>
+            <div id="topBar"><marquee>Welcome to my domain. This is a site for putting out my things. Hope you enjoy your stay here!</marquee></div>
 
     <div id="headerArea">
 
@@ -36,7 +37,8 @@
             <ul>
                 <li><a href="/">Home</a></li>
                 <li><a href="/blog">Blog</a></li>
-                <li><a href="/about">About</a></li>
+                <li><a href="https://books.swornim.xyz">Books</a></li>
+                <li><a href="https://sadgrl.online/resources/">Click Me!</a></li>
                 <!-- add more links here as you need them -->
             </ul>
         </nav>
@@ -74,8 +76,7 @@
     <!-- footer: now() | date(format="%Y") auto-updates the year so you never
          have to remember to change it. edit the text after the dash. -->
     <footer id="footer" style="margin-top: 10px;">
-        {{ now() | date(format="%Y") }} — your name here
-    </footer>
+        {{ now() | date(format="%Y") }} — &copy; Swornim    </footer>
 
 </div>
 </body>

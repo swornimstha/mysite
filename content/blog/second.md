@@ -1,6 +1,6 @@
 +++
 title = "My second post"
-date = 2026-04-26
+date = 2026-04-27
 +++
 
-Checking if zola sync and my script works as expected. 
+Second post to check if recent pages is changed or not
