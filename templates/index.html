@@ -2,10 +2,10 @@
 
 {% block title %}{{ config.title }}{% endblock %}
 
-{# left sidebar: this shows on the homepage only.
-   "block sidebar_left" overrides the empty default in base.html.
-   put things like an about blurb, links, a site button here. #}
+
 {% block sidebar_left %}
+                <aside id="leftSidebar" style="margin-right: 10px;">
+
     <h2>Updates</h2>
     <div class="box">
           <p>I have finished creating this website on April 2026.</p>
@@ -19,6 +19,7 @@
     <ul>
         <li><a href="https://github.com/swornimstha">my github</a></li>
     </ul>
+        </aside>
 {% endblock %}
 
 {% block content %}
@@ -32,6 +33,7 @@
 {% endblock %}
 
 {% block sidebar_right %}
+   <aside id="rightSidebar" style="margin-left: 10px;">
         <h2>Recent Posts</h2>
     {% set blog = get_section(path="blog/_index.md") %}
     {% for page in blog.pages | slice(end=5) %}
@@ -40,4 +42,5 @@
             <a href="{{ page.permalink }}">{{ page.title }}</a>
         </p>
     {% endfor %}
+        </aside>
 {% endblock %}

@@ -50,11 +50,9 @@
         <!-- leftSidebar: "block sidebar_left" lets child templates override this.
              put content directly here if you want it the same on every page,
              or leave the block empty and fill it in per-template. -->
-        <aside id="leftSidebar" style="margin-right: 10px;">
             {% block sidebar_left %}
             <!-- default left sidebar content goes here -->
             {% endblock %}
-        </aside>
 
         <!-- main content area: every template that extends base.html fills in
              "block content". the child template puts its page content here. -->
@@ -65,11 +63,9 @@
         <!-- rightSidebar: same idea as leftSidebar but on the right.
              if you only want one sidebar, delete this aside and
              remove #rightSidebar styles from your CSS. -->
-        <aside id="rightSidebar" style="margin-left: 10px;">
             {% block sidebar_right %}
             <!-- default right sidebar content goes here -->
             {% endblock %}
-        </aside>
 
     </div>
 
