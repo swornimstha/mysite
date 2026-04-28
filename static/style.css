@@ -21,6 +21,13 @@
     a, button, [role="button"], label, select, summary, [onclick] {
       cursor: url('/cursor2.png'), pointer;
     }
+
+/* for selection, text highlight */
+::selection {
+	background: #ffeeee !important;
+	color: #050000 !important;
+
+}
     /* if you have the URL of a font, you can set it below */
     /* feel free to delete this if it's not your vibe */
 
